@@ -41,10 +41,10 @@ const graphql_tag_1 = __importDefault(require("graphql-tag"));
 let ManualCustomerChannelPlugin = class ManualCustomerChannelPlugin {
 };
 exports.ManualCustomerChannelPlugin = ManualCustomerChannelPlugin;
-ManualCustomerChannelPlugin.ui = {
-    id: 'manual-customer-channel-ui',
+ManualCustomerChannelPlugin.UiExtensions = {
+    id: 'switch-channel',
     extensionPath: path.join(__dirname, 'ui'),
-    routes: [{ route: 'manual-customer-channel', filePath: 'routes.ts' }],
+    routes: [{ route: 'manualadmincustomerchannel', filePath: 'routes.ts' }],
     providers: ['providers.ts'],
 };
 exports.ManualCustomerChannelPlugin = ManualCustomerChannelPlugin = __decorate([

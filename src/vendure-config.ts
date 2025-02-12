@@ -26,8 +26,9 @@ import * as path from 'path';
 import { ManualCustomerChannelPlugin } from './plugins/manualadmincustomerchannel/manualadmincustomerchannel.plugin';
 import { BannerPlugin } from './plugins/banner/banner.plugin';
 
-const IS_DEV = process.env.APP_ENV === 'dev';
+const IS_PROD = path.basename(__dirname) === 'dist';
 
+const IS_DEV = process.env.APP_ENV === 'dev';
 
 export const config: VendureConfig = {
   apiOptions: {
@@ -108,30 +109,11 @@ export const config: VendureConfig = {
     BannerPlugin,
 
     AdminUiPlugin.init({
-      port: 3000,
-      route: "admin",
-      app: compileUiExtensions({
-        outputPath: path.join(__dirname, '../admin-ui/dist'),
-        extensions: [
-          ManualCustomerChannelPlugin.ui,
-          {
-            id: 'manual-admin',
-            extensionPath: path.join(__dirname, 'plugins/manualadmincustomerchannel/ui'),
-            routes: [{ route: 'manualadmincustomerchannel', filePath: 'routes.ts' }],
-            providers: ['providers.ts'],
-          },
-          BannerPlugin.ui,
-          {
-            id: 'cms-banner',
-            extensionPath: path.join(__dirname, 'plugins/banner/ui'),
-            routes: [{ route: 'banner', filePath: 'routes.ts' }],
-            providers: ['providers.ts'],
-          },
-
-        ],
-
-        devMode: false,
-      }),
+      port: 3002,
+      app: {
+        path: path.join(__dirname, '../admin-ui/dist'),
+      },
+      route: 'admin'
     }),
 
 

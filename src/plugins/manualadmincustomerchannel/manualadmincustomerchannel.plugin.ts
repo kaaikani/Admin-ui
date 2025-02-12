@@ -19,10 +19,10 @@ import gql from 'graphql-tag';
     providers: [CustomerChannelService],
 })
 export class ManualCustomerChannelPlugin {
-    static ui: AdminUiExtension = {
-        id: 'manual-customer-channel-ui',
+    static UiExtensions: AdminUiExtension = {
+        id: 'switch-channel',
         extensionPath: path.join(__dirname, 'ui'),
-        routes: [{ route: 'manual-customer-channel', filePath: 'routes.ts' }],
+        routes: [{ route: 'manualadmincustomerchannel', filePath: 'routes.ts' }],
         providers: ['providers.ts'],
     };
 }

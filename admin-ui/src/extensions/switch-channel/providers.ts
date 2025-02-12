@@ -5,7 +5,7 @@ export default [
         {
             id: 'manual-1', // Unique ID for the item
             label: 'Switch Channel', // Item label
-            routerLink: ['/extensions/manual-customer-channel'],
+            routerLink: ['/extensions/manualadmincustomerchannel'],
             icon: 'assign-user',
         },
         'customers', // The section ID where the item will be added

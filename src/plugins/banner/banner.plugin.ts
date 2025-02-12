@@ -33,10 +33,10 @@ export class BannerPlugin {
         return BannerPlugin;
     }
 
-    static ui: AdminUiExtension = {
-        id: 'banner-management-ui',
+    static UiExtensions: AdminUiExtension = {
+        id: 'cms-banner',
         extensionPath: path.join(__dirname, 'ui'),
-        routes: [{ route: 'banner-management', filePath: 'routes.ts' }],
+        routes: [{ route: 'banner', filePath: 'routes.ts' }],
         providers: ['providers.ts'],
     };
 }

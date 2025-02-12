@@ -4,7 +4,7 @@ export default [
     addNavMenuItem({
         id: 'banner-ui',
         label: 'Banner Section',
-        routerLink: ['/extensions/banner-management'],
+        routerLink: ['/extensions/banner'],
         icon: 'image',
     }, 'marketing'),
 ];
